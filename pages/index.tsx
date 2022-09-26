@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
+import { Typography } from '@mui/material';
 
 const Home: NextPage = () => {
-  return <div>GeApp</div>;
+  return <Typography>GEApp</Typography>;
 };
 
 export default Home;
