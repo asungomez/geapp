@@ -1,6 +1,6 @@
 name: Pull Request Verification
 on:
-  pull-request:
+  pull_request:
     branches:
       - main
 jobs:
