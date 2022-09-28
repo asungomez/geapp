@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-geapp-dev-104604-authRole",
+      "UnauthRoleArn": "arn:aws:iam::291311682549:role/amplify-geapp-dev-104604-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::291311682549:role/amplify-geapp-dev-104604-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-geapp-dev-104604-deployment",
+      "UnauthRoleName": "amplify-geapp-dev-104604-unauthRole",
+      "StackName": "amplify-geapp-dev-104604",
+      "StackId": "arn:aws:cloudformation:eu-west-1:291311682549:stack/amplify-geapp-dev-104604/fe03a260-3f09-11ed-aea0-06f83dc77a7f",
+      "AmplifyAppId": "d3k7v4idjhs9a4"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3k7v4idjhs9a4",
+          "type": "cicd"
+        }
+      }
+    }
+  }
+}

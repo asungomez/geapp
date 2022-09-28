@@ -1,0 +1,15 @@
+{
+  "projectName": "geapp",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react",
+    "config": {
+      "SourceDir": "pages",
+      "DistributionDir": ".next",
+      "BuildCommand": "yarn build",
+      "StartCommand": "yarn start"
+    }
+  },
+  "providers": ["awscloudformation"]
+}
