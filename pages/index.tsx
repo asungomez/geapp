@@ -1,8 +1,23 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import { Typography } from '@mui/material';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 const Home: NextPage = () => {
-  return <Typography>GEApp</Typography>;
+  const { t } = useTranslation();
+  return <Typography>{t('greeting')}</Typography>;
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  let props = {};
+  if (locale) {
+    const i18nProps = await serverSideTranslations(locale);
+    props = {
+      ...props,
+      ...i18nProps,
+    };
+  }
+  return { props };
 };
 
 export default Home;
