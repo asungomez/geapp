@@ -1,13 +1,7 @@
-import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import { FC } from 'react';
 import { LanguageSelector } from '../LanguageSelector/LanguageSelector';
-import {
-  Container,
-  Icons,
-  LocationIcon,
-  LogoBox,
-  SearchIcon,
-} from './TopBar.style';
+import { Container, Icons, LocationIcon, LogoBox } from './TopBar.style';
 
 export const TopBar: FC = () => {
   return (
@@ -19,11 +13,6 @@ export const TopBar: FC = () => {
             <Typography>GEApp</Typography>
           </LogoBox>
           <Icons>
-            <Box>
-              <IconButton>
-                <SearchIcon />
-              </IconButton>
-            </Box>
             <Box>
               <LanguageSelector />
             </Box>

@@ -1,6 +1,5 @@
 import { Box, Container as MUIContainer } from '@mui/material';
 import { styled } from '@mui/system';
-import MUISearchIcon from '@mui/icons-material/Search';
 import MUILocationOnIcon from '@mui/icons-material/LocationOn';
 
 export const Container = styled(MUIContainer)(({ theme }) => ({
@@ -28,8 +27,4 @@ export const LocationIcon = styled(MUILocationOnIcon)(({ theme }) => ({
 export const LogoBox = styled(Box)(() => ({
   flexDirection: 'row',
   display: 'flex',
-}));
-
-export const SearchIcon = styled(MUISearchIcon)(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
 }));
