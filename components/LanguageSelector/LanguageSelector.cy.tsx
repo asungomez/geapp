@@ -1,8 +1,6 @@
 /// <reference types="cypress" />
 import { LanguageSelector, localeConfiguration } from './LanguageSelector';
 import * as NextRouter from 'next/router';
-import { ThemeProvider } from '@mui/material';
-import { theme } from '../../styles/theme';
 
 const labels = Object.values(localeConfiguration).map(({ label }) => label);
 
@@ -27,11 +25,7 @@ const mountComponent = (currentLocale = 'es', push = cy.spy()) => {
     query: {},
     asPath: '/',
   });
-  cy.mount(
-    <ThemeProvider theme={theme}>
-      <LanguageSelector />
-    </ThemeProvider>,
-  );
+  cy.mount(<LanguageSelector />);
 };
 
 describe('LanguageSelector.cy.ts', () => {

@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 // ***********************************************************
 // This example support/component.ts is processed and
 // loaded automatically before your test files.
@@ -18,6 +19,8 @@ import './commands';
 import '@testing-library/cypress/add-commands';
 
 import { mount } from 'cypress/react18';
+import { ThemeProvider } from '@mui/material';
+import { theme } from '../../styles/theme';
 
 declare global {
   namespace Cypress {
@@ -27,4 +30,6 @@ declare global {
   }
 }
 
-Cypress.Commands.add('mount', mount);
+Cypress.Commands.add('mount', (component: React.ReactNode, options) =>
+  mount(<ThemeProvider theme={theme}>{component}</ThemeProvider>, options),
+);
