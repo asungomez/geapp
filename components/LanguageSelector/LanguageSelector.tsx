@@ -11,7 +11,7 @@ import USFlag from '../../assets/images/us.png';
 import ESFlag from '../../assets/images/es.png';
 import { useRouter } from 'next/router';
 
-const localeConfiguration: {
+export const localeConfiguration: {
   [locale: string]: { flag: string; label: string };
 } = {
   es: { flag: ESFlag.src, label: 'Español' },
