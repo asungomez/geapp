@@ -24,3 +24,7 @@ jobs:
         run: yarn lint
       - name: Build
         run: yarn build
+      - name: Cypress run
+        uses: cypress-io/github-action@v4.x.x
+        with:
+          start: yarn start
