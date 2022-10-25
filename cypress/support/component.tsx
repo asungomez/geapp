@@ -16,7 +16,6 @@
 
 // Import commands using ES2015 syntax:
 import './commands';
-import '@testing-library/cypress/add-commands';
 
 import { mount } from 'cypress/react18';
 import { ThemeProvider } from '@mui/material';
