@@ -23,4 +23,4 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default appWithTranslation(App, i18n);
+export default appWithTranslation(App, i18n ? { i18n } : undefined);
