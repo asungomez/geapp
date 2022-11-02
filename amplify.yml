@@ -22,13 +22,13 @@ test:
   phases:
     preTest:
       commands:
-        - yarn dev && npx wait-on http://localhost:3000
+        - yarn amplify:wait
     test:
       commands:
-        - yarn test:amplify
+        - yarn amplify:test
     postTest:
       commands:
-        - yarn test:report
+        - yarn amplify:report
         - kill -9 $(lsof -ti:3000)
   artifacts:
     baseDirectory: cypress

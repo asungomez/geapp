@@ -13,8 +13,9 @@
     "test:unit": "cypress run --component",
     "pretest:e2e": "next dev & wait-on http://localhost:3000",
     "test:e2e": "cypress run; kill -9 $(lsof -ti:3000)",
-    "test:amplify": "cypress run --reporter mochawesome --reporter-options \"reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss\"",
-    "test:report": "mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json"
+    "amplify:test": "cypress run --reporter mochawesome --reporter-options \"reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss\"",
+    "amplify:report": "mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json",
+    "amplify:wait": "next dev & wait-on http://localhost:3000"
   },
   "dependencies": {
     "@svgr/webpack": "^6.5.0",
