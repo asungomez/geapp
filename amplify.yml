@@ -6,7 +6,6 @@ frontend:
         - yarn install --pure-lockfile
         - yarn format
         - yarn lint
-        - npx cypress install
         - yarn test:unit
     build:
       commands:
@@ -23,8 +22,7 @@ test:
   phases:
     preTest:
       commands:
-        - yarn install --pure-lockfile
-        - yarn start && npx wait-on http://localhost:3000
+        - yarn dev && npx wait-on http://localhost:3000
     test:
       commands:
         - yarn test:amplify
