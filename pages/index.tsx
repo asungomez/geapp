@@ -11,7 +11,12 @@ const Home: NextPage = () => {
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   let props = {};
   if (locale) {
-    const i18nProps = await serverSideTranslations(locale);
+    const i18nProps = await serverSideTranslations(locale, ['common'], {
+      i18n: {
+        defaultLocale: 'es',
+        locales: ['en', 'es'],
+      },
+    });
     props = {
       ...props,
       ...i18nProps,
