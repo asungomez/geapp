@@ -22,17 +22,15 @@ test:
     preTest:
       commands:
         - yarn install --pure-lockfile
-        - yarn install -D pm2
-        - yarn install -D mocha@5.2.0 mochawesome mochawesome-merge mochawesome-report-generator
-        - npx pm2 start npm -- start
-        - 'npx wait-on --timeout 60 http://localhost:3000'
+        - yarn pm2:start
+        - yarn wait
     test:
       commands:
-        - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
+        - yarn test:amplify
     postTest:
       commands:
-        - npx mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json
-        - npx pm2 kill
+        - yarn test:report
+        - yarn pm2:kill
   artifacts:
     baseDirectory: cypress
     configFilePath: '**/mochawesome.json'
