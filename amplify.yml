@@ -22,15 +22,15 @@ test:
     preTest:
       commands:
         - yarn install --pure-lockfile
-        - yarn pm2:start
-        - yarn wait
+        - npx pm2 start npm -- start
+        - npx wait-on --timeout 60 http://localhost:3000
     test:
       commands:
         - yarn test:amplify
     postTest:
       commands:
         - yarn test:report
-        - yarn pm2:kill
+        - npx pm2 kill
   artifacts:
     baseDirectory: cypress
     configFilePath: '**/mochawesome.json'

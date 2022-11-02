@@ -9,15 +9,12 @@
     "lint": "next lint",
     "prepare": "husky install",
     "start": "next start",
-    "pm2:start": "pm2 start yarn -- start",
-    "pm2:kill": "pm2 kill",
     "cypress:open": "cypress open",
     "test:unit": "cypress run --component",
     "pretest:e2e": "next dev & wait-on http://localhost:3000",
     "test:e2e": "cypress run; kill -9 $(lsof -ti:3000)",
     "test:amplify": "cypress run --reporter mochawesome --reporter-options \"reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss\"",
-    "test:report": "mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json",
-    "wait": "wait-on --timeout 60 http://localhost:3000"
+    "test:report": "mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json"
   },
   "dependencies": {
     "@svgr/webpack": "^6.5.0",
