@@ -10,9 +10,12 @@ frontend:
       commands:
         - yarn build
   artifacts:
-    baseDirectory: .next
+    baseDirectory: .
     files:
-      - '**/*'
+      - '.next/**/*'
+      - package.json
+      - next.config.js
+      - next-i18next.config.js
   cache:
     paths:
       - node_modules/**/*
