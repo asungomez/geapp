@@ -6,6 +6,7 @@ frontend:
         - yarn install --pure-lockfile
         - yarn format
         - yarn lint
+        - npx cypress install
         - yarn test:unit
     build:
       commands:
@@ -17,6 +18,7 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+      - /root/.cache/Cypress
 test:
   phases:
     preTest:
