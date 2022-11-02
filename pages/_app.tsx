@@ -22,4 +22,9 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default appWithTranslation(App);
+export default appWithTranslation(App, {
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['en', 'es'],
+  },
+});
