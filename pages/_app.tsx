@@ -5,6 +5,7 @@ import { Container, ThemeProvider } from '@mui/material';
 import { appWithTranslation } from 'next-i18next';
 import { TopBar } from '../components/TopBar/TopBar';
 import Head from 'next/head';
+import { i18n } from '../next-i18next.config';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -22,4 +23,4 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default appWithTranslation(App);
+export default appWithTranslation(App, i18n);
