@@ -6,6 +6,8 @@ frontend:
         - yarn install --pure-lockfile
         - yarn format
         - yarn lint
+        - npx cypress install
+        - yarn test:unit
     build:
       commands:
         - yarn build
@@ -16,3 +18,20 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+test:
+  phases:
+    preTest:
+      commands:
+        - yarn amplify:wait
+    test:
+      commands:
+        - yarn amplify:test
+    postTest:
+      commands:
+        - yarn amplify:report
+  artifacts:
+    baseDirectory: cypress
+    configFilePath: '**/mochawesome.json'
+    files:
+      - '**/*.png'
+      - '**/*.mp4'

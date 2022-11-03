@@ -1,4 +1,9 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn format && yarn lint && git add -A && yarn test:unit && yarn test:e2e
+yarn format && \
+yarn lint && \
+git add -A && \
+yarn build && \
+yarn test:unit && \
+yarn test:e2e
