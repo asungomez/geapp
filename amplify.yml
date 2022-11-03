@@ -29,7 +29,6 @@ test:
     postTest:
       commands:
         - yarn amplify:report
-        - kill -9 $(lsof -ti:3000)
   artifacts:
     baseDirectory: cypress
     configFilePath: '**/mochawesome.json'
