@@ -28,7 +28,7 @@ describe('Internationalization', () => {
   describe('Changing the locale', () => {
     it('changes the language of the UI', () => {
       cy.visit('/es');
-      cy.findByRole('button').click();
+      cy.findByLabelText('Change language').click();
       cy.findByText('English').click();
       assertLanguage('en');
     });
