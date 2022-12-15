@@ -17,6 +17,7 @@ const nextConfig = {
     return config;
   },
   trailingSlash: true,
+  output: 'standalone',
 };
 
 module.exports = nextConfig;
