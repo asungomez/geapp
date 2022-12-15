@@ -11,7 +11,7 @@ export const TopBar: FC = () => {
         <Container>
           <LogoBox>
             <LocationIcon />
-            <Typography>GEApp</Typography>
+            <Typography>Geapp</Typography>
           </LogoBox>
           <Icons>
             <Box>

@@ -1,7 +1,7 @@
 const languageCodes = ['es', 'en'] as const;
 type LanguageCode = typeof languageCodes[number];
 const assertLanguage = (language: LanguageCode) => {
-  const content = language === 'en' ? 'Welcome to GEApp' : 'Bienvenido a GEApp';
+  const content = language === 'en' ? 'Welcome to Geapp' : 'Bienvenido a Geapp';
   cy.contains(content);
 };
 

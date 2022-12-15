@@ -18,7 +18,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>GEApp</title>
+        <title>Geapp</title>
       </Head>
       <AuthProvider>
         <ThemeProvider theme={theme}>
