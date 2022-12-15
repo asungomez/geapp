@@ -12,9 +12,8 @@
     "cypress:open": "cypress open",
     "test:unit": "cypress run --component",
     "test:e2e": "start-server-and-test dev http://localhost:3000 \"cypress run\"",
-    "amplify:test": "cypress run --reporter mochawesome --reporter-options \"reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss\"",
-    "amplify:report": "mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json",
-    "amplify:wait": "next dev & wait-on http://localhost:3000"
+    "amplify:test": "start-server-and-test dev http://localhost:3000 \"cypress run --reporter mochawesome --reporter-options \\\"reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss\\\"\"",
+    "amplify:report": "mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json"
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^4.2.0",
