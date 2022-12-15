@@ -17,6 +17,11 @@
           "appId": "d3k7v4idjhs9a4",
           "type": "cicd"
         }
+      },
+      "auth": {
+        "geappauth": {
+          "googleClientId": "852627025664-l9sj93eedr82aiuhplebir3rti8p1o4s.apps.googleusercontent.com"
+        }
       }
     }
   }

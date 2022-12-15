@@ -1,4 +1,5 @@
 {
   "greeting": "Bienvenido a GEApp",
-  "log-in": "Iniciar sesión"
+  "log-in": "Iniciar sesión",
+  "log-out": "Cerrar sesión"
 }

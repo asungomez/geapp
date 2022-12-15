@@ -5,19 +5,29 @@ import { Container, ThemeProvider } from '@mui/material';
 import { appWithTranslation } from 'next-i18next';
 import { TopBar } from '../components/TopBar/TopBar';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { configureAmplify } from '../amplify/configure';
+import { AuthProvider } from '../components/AuthProvider/AuthProvider';
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
+  useEffect(() => {
+    configureAmplify((router.locale as 'es' | 'en') || 'es');
+  }, [router.locale]);
   return (
     <>
       <Head>
         <title>GEApp</title>
       </Head>
-      <ThemeProvider theme={theme}>
-        <TopBar />
-        <Container>
-          <Component {...pageProps} />
-        </Container>
-      </ThemeProvider>
+      <AuthProvider>
+        <ThemeProvider theme={theme}>
+          <TopBar />
+          <Container>
+            <Component {...pageProps} />
+          </Container>
+        </ThemeProvider>
+      </AuthProvider>
     </>
   );
 };

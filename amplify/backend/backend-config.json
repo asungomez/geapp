@@ -5,5 +5,27 @@
       "type": "cicd",
       "lastPushTimeStamp": "2022-09-28T08:55:59.087Z"
     }
-  }
+  },
+  "auth": {
+    "geappauth": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": ["GOOGLE"],
+        "usernameAttributes": [],
+        "signupAttributes": ["EMAIL"],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": ["SMS"],
+        "verificationMechanisms": ["EMAIL"]
+      }
+    }
+  },
+  "function": {},
+  "api": {}
 }
