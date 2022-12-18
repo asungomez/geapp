@@ -1,7 +1,7 @@
 const languageCodes = ['es', 'en'] as const;
 type LanguageCode = typeof languageCodes[number];
 const assertLanguage = (language: LanguageCode) => {
-  const content = language === 'en' ? 'Welcome to GEApp' : 'Bienvenido a GEApp';
+  const content = language === 'en' ? 'Welcome to Geapp' : 'Bienvenido a Geapp';
   cy.contains(content);
 };
 
@@ -28,7 +28,7 @@ describe('Internationalization', () => {
   describe('Changing the locale', () => {
     it('changes the language of the UI', () => {
       cy.visit('/es');
-      cy.findByRole('button').click();
+      cy.findByLabelText('Change language').click();
       cy.findByText('English').click();
       assertLanguage('en');
     });

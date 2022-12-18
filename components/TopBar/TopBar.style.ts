@@ -14,10 +14,11 @@ export const Container = styled(MUIContainer)(({ theme }) => ({
   justifyContent: 'space-between',
 }));
 
-export const Icons = styled('div')(() => ({
+export const Icons = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
+  gap: theme.spacing(2.5),
 }));
 
 export const LocationIcon = styled(MUILocationOnIcon)(({ theme }) => ({

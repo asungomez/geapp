@@ -1,13 +1,14 @@
 version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - amplifyPush --simple
 frontend:
   phases:
     preBuild:
       commands:
         - yarn install --pure-lockfile
-        - yarn format
-        - yarn lint
-        - npx cypress install
-        - yarn test:unit
     build:
       commands:
         - yarn build
@@ -22,7 +23,7 @@ test:
   phases:
     preTest:
       commands:
-        - yarn amplify:wait
+        - npx cypress install
     test:
       commands:
         - yarn amplify:test

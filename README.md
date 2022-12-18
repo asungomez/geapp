@@ -1,6 +1,6 @@
-# GEApp
+# Geapp
 
-This is a WIP documentation for GEApp repository.
+This is a WIP documentation for Geapp repository.
 
 ## Setup
 

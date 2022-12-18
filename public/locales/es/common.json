@@ -1,3 +1,5 @@
 {
-  "greeting": "Bienvenido a GEApp"
+  "greeting": "Bienvenido a Geapp",
+  "log-in": "Iniciar sesión",
+  "log-out": "Cerrar sesión"
 }

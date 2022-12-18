@@ -1,15 +1,17 @@
 import {
-  IconButton,
+  Button,
   ListItemIcon,
   ListItemText,
   Menu,
   MenuItem,
 } from '@mui/material';
 import { FC, useState } from 'react';
-import { Avatar, LanguageIcon } from './LanguageSelector.style';
+import { Avatar } from './LanguageSelector.style';
 import USFlag from '../../assets/images/us.png';
 import ESFlag from '../../assets/images/es.png';
 import { useRouter } from 'next/router';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import Image from 'next/image';
 
 export const localeConfiguration: {
   [locale: string]: { flag: string; label: string };
@@ -35,11 +37,26 @@ export const LanguageSelector: FC = () => {
 
   const open = Boolean(anchorEl);
 
+  if (!locale) {
+    return null;
+  }
+
   return (
     <>
-      <IconButton onClick={togglePopover} id="language-selector-button">
-        <LanguageIcon />
-      </IconButton>
+      <Button
+        onClick={togglePopover}
+        id="language-selector-button"
+        endIcon={<KeyboardArrowDownIcon />}
+        color="inherit"
+        aria-label="Change language"
+      >
+        <Image
+          src={localeConfiguration[locale].flag}
+          width={28}
+          height={20}
+          alt={localeConfiguration[locale].label}
+        />
+      </Button>
       <Menu
         open={open}
         anchorEl={anchorEl}

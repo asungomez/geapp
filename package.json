@@ -11,14 +11,15 @@
     "start": "next start",
     "cypress:open": "cypress open",
     "test:unit": "cypress run --component",
-    "pretest:e2e": "next dev & wait-on http://localhost:3000",
-    "test:e2e": "cypress run; kill -9 $(lsof -ti:3000)",
-    "amplify:test": "cypress run --reporter mochawesome --reporter-options \"reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss\"",
-    "amplify:report": "mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json",
-    "amplify:wait": "next dev & wait-on http://localhost:3000"
+    "test:e2e": "start-server-and-test dev http://localhost:3000 \"cypress run\"",
+    "amplify:test": "start-server-and-test dev http://localhost:3000 \"cypress run --reporter mochawesome --reporter-options \\\"reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss\\\"\"",
+    "amplify:report": "mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^4.2.0",
+    "@mui/lab": "^5.0.0-alpha.111",
     "@svgr/webpack": "^6.5.0",
+    "aws-amplify": "^5.0.5",
     "next": "12.3.1",
     "next-i18next": "^12.1.0",
     "react": "18.2.0",
@@ -29,7 +30,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.6",
-    "@mui/material": "^5.10.6",
+    "@mui/material": "5.10.11",
     "@mui/styled-engine-sc": "^5.10.6",
     "@testing-library/cypress": "^8.0.3",
     "@types/node": "18.7.21",
@@ -50,6 +51,7 @@
     "mochawesome-merge": "^4.2.1",
     "mochawesome-report-generator": "^6.2.0",
     "prettier": "^2.7.1",
+    "start-server-and-test": "^1.15.2",
     "styled-components": "^5.3.5",
     "typescript": "4.8.3",
     "wait-on": "^6.0.1"
